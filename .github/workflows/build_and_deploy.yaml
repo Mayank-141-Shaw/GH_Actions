@@ -10,6 +10,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Update Readme
-        uses: ./ .github/actions/readmeupdate@v1
+        uses: ./.github/actions/readmeupdate@v1
         with:
           readme_path: README.md
