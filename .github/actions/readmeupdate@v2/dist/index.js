@@ -27617,6 +27617,9 @@ async function run() {
 
     // reads the readme file from path
     (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.info)(`Updating README file: ${readme_path}`);
+    (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.info)(`v1 : ${v1}`);
+    (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.info)(`v2 : ${v2}`);
+    (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.info)(`sum: ${sum}`);
     let data = (0,fs__WEBPACK_IMPORTED_MODULE_1__.readFileSync)(readme_path, {
       encoding: "utf8",
     });
