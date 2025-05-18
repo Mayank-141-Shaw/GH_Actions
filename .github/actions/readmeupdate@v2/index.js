@@ -12,6 +12,9 @@ async function run() {
 
     // reads the readme file from path
     info(`Updating README file: ${readme_path}`);
+    info(`v1 : ${v1}`);
+    info(`v2 : ${v2}`);
+    info(`sum: ${sum}`);
     let data = readFileSync(readme_path, {
       encoding: "utf8",
     });
