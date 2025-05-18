@@ -27617,10 +27617,8 @@ async function run() {
 
     // reads the readme file from path
     (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.info)(`Updating README file: ${readme_path}`);
-    let data = (0,fs__WEBPACK_IMPORTED_MODULE_1__.readFile)(readme_path, "utf8", (err, data) => {
-      if (err) {
-        throw err;
-      }
+    let data = (0,fs__WEBPACK_IMPORTED_MODULE_1__.readFileSync)(readme_path, {
+      encoding: "utf8",
     });
 
     // updates the text with data
@@ -27629,10 +27627,8 @@ async function run() {
     const result = data.replace(/{{action_sum}}/g, `${sum}`); // Use a global replace
 
     // writes the updated file to readme
-    (0,fs__WEBPACK_IMPORTED_MODULE_1__.writeFile)(readme_path, result, "utf8", (err) => {
-      if (err) {
-        throw err;
-      }
+    (0,fs__WEBPACK_IMPORTED_MODULE_1__.writeFileSync)(readme_path, result, {
+      encoding: "utf8",
     });
     (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.info)("README file updated successfully.");
   } catch (e) {

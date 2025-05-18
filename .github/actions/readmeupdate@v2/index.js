@@ -1,6 +1,6 @@
 import { getInput, info, setFailed } from "@actions/core";
 // const github = require("@actions/github");
-import { readFile, writeFile } from "fs";
+import { readFileSync, writeFileSync } from "fs";
 
 async function run() {
   try {
@@ -12,10 +12,8 @@ async function run() {
 
     // reads the readme file from path
     info(`Updating README file: ${readme_path}`);
-    let data = readFile(readme_path, "utf8", (err, data) => {
-      if (err) {
-        throw err;
-      }
+    let data = readFileSync(readme_path, {
+      encoding: "utf8",
     });
 
     // updates the text with data
@@ -24,10 +22,8 @@ async function run() {
     const result = data.replace(/{{action_sum}}/g, `${sum}`); // Use a global replace
 
     // writes the updated file to readme
-    writeFile(readme_path, result, "utf8", (err) => {
-      if (err) {
-        throw err;
-      }
+    writeFileSync(readme_path, result, {
+      encoding: "utf8",
     });
     info("README file updated successfully.");
   } catch (e) {
