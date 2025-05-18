@@ -12,7 +12,11 @@ async function run() {
 
     // reads the readme file from path
     info(`Updating README file: ${readme_path}`);
-    let data = readFile(readme_path, "utf8");
+    let data = readFile(readme_path, "utf8", (err, data) => {
+      if (err) {
+        throw err;
+      }
+    });
 
     // updates the text with data
     data = data.replace(/{{action_val_1}}/g, `${v1}`);
@@ -20,7 +24,11 @@ async function run() {
     const result = data.replace(/{{action_sum}}/g, `${sum}`); // Use a global replace
 
     // writes the updated file to readme
-    writeFile(readme_path, result, "utf8");
+    writeFile(readme_path, result, "utf8", (err) => {
+      if (err) {
+        throw err;
+      }
+    });
     info("README file updated successfully.");
   } catch (e) {
     setFailed(e.message);
