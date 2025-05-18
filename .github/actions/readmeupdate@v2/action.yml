@@ -1,0 +1,12 @@
+name: Update Readme
+description: Updates Readme with template
+
+inputs:
+  readme_path:
+    description: Path to readme file
+    required: true
+    default: "README.md"
+
+runs:
+  using: "node20"
+  main: "out/main.js"
