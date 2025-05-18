@@ -5,7 +5,7 @@ inputs:
   readme_path:
     description: Path to readme file
     required: true
-    default: "README.md"
+    default: ./README.md
 
 runs:
   using: "node20"

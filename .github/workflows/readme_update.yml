@@ -12,4 +12,4 @@ jobs:
       - name: Update Readme
         uses: ./.github/actions/readmeupdate@v2
         with:
-          readme_path: README.md
+          readme_path: ./README.md
